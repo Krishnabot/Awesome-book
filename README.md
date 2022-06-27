@@ -1,28 +1,31 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Awesome Book App
 
-> Description the project.
+- Created a collection that keeps a list of books (hint: you can use an array of objects for that).
+- Created a function to add a new book to the collection, with title and author.
+- Created a function to remove a book from the collection (hint: you can use the array filter() method).
+- All books are saved in the collection in the top part of the page.
+- When a user clicks the "Add" button: A new book is added to the collection.
+- The new book is displayed in the page.
+- When a user clicks the "Remove" button: The correct book is removed from the collection.
+- The correct book dissapears from the page.
+- The data is preserved in the browser's memory by using localStorage.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Html
+- Java script
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://krishnabot.github.io/Awesome-book/)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
-
-To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
@@ -44,6 +47,10 @@ To get a local copy up and running follow these simple example steps.
 - GitHub: [@githubhandle](https://github.com/Krishnabot)
 - Twitter: [@last_matrix](https://twitter.com/last_matrix)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/krishna-prasad-acharya-3596bb130/)
+
+👤 **Jafar Yousef**
+
+- GitHub: [@githubhandle](https://github.com/jaferIdrees)
 
 
 ## 🤝 Contributing
