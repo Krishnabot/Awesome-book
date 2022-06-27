@@ -27,10 +27,6 @@ class DynamicHtml {
     removeBtn.className = 'removeBtn';
     removeBtn.textContent = 'Remove';
     removeBtn.onclick = removeBook;
-    // newRow.innerHTML = `
-    // <td>${book.title}</td>
-    // <td>${book.author}</td>
-    // `;
     bookRecord.append(titleCell, authCell, removeBtn, horline);
     bookList.appendChild(bookRecord);
   }
