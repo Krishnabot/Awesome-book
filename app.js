@@ -7,6 +7,12 @@ class AwesomeBook {
   }
 }
 
+class BooksClass {
+  constructor() {
+    return [];
+  }
+}
+
 class DynamicHtml {
   static displayElements(booksCollection) {
     booksCollection.forEach((book, index) => DynamicHtml.addBookToTable(book, index));
@@ -14,39 +20,31 @@ class DynamicHtml {
 
   static addBookToTable(book, id) {
     const bookList = document.querySelector('#book-list');
-    const bookRecord = document.createElement('tbody');
-
-    const titleCell = document.createElement('tr');
-    const authCell = document.createElement('tr');
-    const horline = document.createElement('hr');
-    horline.setAttribute('width', '100vw');
-    titleCell.textContent = book.title;
-    authCell.textContent = book.author;
+    const bookRecord = document.createElement('tr');
+    const titleCell = document.createElement('td');
+    // const horline = document.createElement('hr');
+    // horline.setAttribute('width', '100vw');
+    titleCell.textContent = `"${book.title}" by ${book.author}`;
     const removeBtn = document.createElement('button');
     removeBtn.id = id;
     removeBtn.className = 'removeBtn';
     removeBtn.textContent = 'Remove';
-    bookRecord.append(titleCell, authCell, removeBtn, horline);
+    removeBtn.onclick = this.removeBook;
+    bookRecord.append(titleCell, removeBtn);
     bookList.appendChild(bookRecord);
   }
 
-  static removeBook() {
-    const author = document.getElementById('author');
-    const id = JSON.parse(localStorage.getItem(booksCollection));
-    booksCollection.forEach((book, index) => {
-      if (id.author === author) {
-        id.splice(index, 1);
-      }
-    });
+  static removeBook(e) {
+    const id = parseInt(this.id);
+    booksCollection.splice(id, 1);
+    console.log(booksCollection);
+    e.target.parentNode.remove();
+    localStorage.setItem('booksCollection', JSON.stringify(booksCollection));
   }
 }
 
-document.querySelector('.removeBtn').addEventListener('click', (event) => {
-  DynamicHtml.removeBook(event.target);
-});
-
 const addBtn = document.getElementById('book-form');
-let booksCollection = [];
+let booksCollection = new BooksClass();
 if (localStorage.getItem('booksCollection')) {
   booksCollection = JSON.parse(localStorage.getItem('booksCollection'));
 }
