@@ -8,14 +8,21 @@ class AwesomeBook {
 }
 
 class DynamicHtml {
-  static displayElements(booksCollection) {
-    booksCollection.forEach((book, index) => DynamicHtml.addBookToTable(book, index));
+  constructor(){
+    return [];
+  }
+  addBook(book) {
+    this.push(book);
+  }
+  displayElements() {
+    console.log(this);
+    this.forEach((book, index) => this.addBookToTable(book, index));
   }
 
-  static addBookToTable(book, id) {
+  addBookToTable(book, id) {
+    console.log(this);
     const bookList = document.querySelector('#book-list');
     const bookRecord = document.createElement('tbody');
-
     const titleCell = document.createElement('tr');
     const authCell = document.createElement('tr');
     const horline = document.createElement('hr');
@@ -40,19 +47,20 @@ function removeBook(event) {
 }
 
 const addBtn = document.getElementById('book-form');
-let booksCollection = [];
+let booksCollection = new DynamicHtml();
 if (localStorage.getItem('booksCollection')) booksCollection = JSON.parse(localStorage.getItem('booksCollection'));
 addBtn.addEventListener('submit', () => {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
   const book = new AwesomeBook(title, author);
-  booksCollection.push(book);
+  booksCollection.addBook(book);
+  console.log(booksCollection);
   const id = booksCollection.length - 1;
-  DynamicHtml.addBookToTable(book, id);
+  booksCollection.addBookToTable(book, id);
   localStorage.setItem('booksCollection', JSON.stringify(booksCollection));
 });
 
 window.addEventListener('load', () => {
-  if (localStorage.getItem('booksCollection')) booksCollection = JSON.parse(localStorage.getItem('booksCollection'));
-  DynamicHtml.displayElements(booksCollection);
+  // if (localStorage.getItem('booksCollection')) booksCollection = JSON.parse(localStorage.getItem('booksCollection'));
+  // booksCollection.displayElements;
 });
