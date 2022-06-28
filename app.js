@@ -35,9 +35,8 @@ class DynamicHtml {
   }
 
   static removeBook(e) {
-    const id = parseInt(this.id);
+    const id = parseInt(this.id, 10);
     booksCollection.splice(id, 1);
-    console.log(booksCollection);
     e.target.parentNode.remove();
     localStorage.setItem('booksCollection', JSON.stringify(booksCollection));
   }
