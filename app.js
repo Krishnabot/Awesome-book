@@ -34,15 +34,15 @@ class DynamicHtml {
 
 function removeBook(event) {
   const id = parseInt(event.target.id, 10);
-  booksCollection.pop(id);
+  booksCollection.splice(id,1);
   localStorage.setItem('booksCollection', JSON.stringify(booksCollection));
   event.target.parentNode.remove();
 }
 
-const addBtn = document.getElementById('add-book');
+const addBtn = document.getElementById('book-form');
 let booksCollection = [];
 if (localStorage.getItem('booksCollection')) booksCollection = JSON.parse(localStorage.getItem('booksCollection'));
-addBtn.addEventListener('click', () => {
+addBtn.addEventListener('submit', () => {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
   const book = new AwesomeBook(title, author);
