@@ -22,8 +22,6 @@ class DynamicHtml {
     const bookList = document.querySelector('#book-list');
     const bookRecord = document.createElement('tr');
     const titleCell = document.createElement('td');
-    // const horline = document.createElement('hr');
-    // horline.setAttribute('width', '100vw');
     titleCell.textContent = `"${book.title}" by ${book.author}`;
     const removeBtn = document.createElement('button');
     removeBtn.id = id;
