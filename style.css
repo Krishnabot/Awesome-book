@@ -7,8 +7,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  border-top: 1px solid red;
   width: 70%;
+  margin: auto;
 }
 
 #date {
@@ -19,15 +19,26 @@ body {
   display: flex;
   justify-content: space-between;
   flex: 0 0 100%;
-  border : 1px solid green;
+  border : 1px solid rgb(133, 134, 133);
+  padding: 1rem;
 }
 
 .navItems {
   list-style: none;
   display: flex;
+  gap: 20px;
 }
-table {
+.navItems > .navItem {
+  border-right: 2px solid black ;
+ padding-right: 20px;
+
+}
+
+#booksList {
   border: 2px solid black;
+  margin: 5rem auto 5rem auto;
+  padding: 1rem;
+  
 }
 
 tbody :nth-child(even) {
@@ -38,6 +49,7 @@ tr {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
 }
 
 .removeBtn {
@@ -52,15 +64,16 @@ td {
   font-size: 32px;
   width: 500px;
   line-height: 1;
+  margin-top: 5px;
 }
 
 #book-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 2rem;
+  margin: auto;
   flex: 1 1 70%;
-  border: 1px solid blue;
+  width: 70%;
 }
 
 #title,
@@ -77,6 +90,21 @@ td {
 
 #add-book {
   margin-left: auto;
+  width: 10%;
+  margin-right: 8.5rem;
 }
 
-h2 
+#contact {
+  margin: auto ;
+}
+
+#contact > ul > li {
+  margin-left : 5rem;
+}
+
+footer > p {
+  margin-top: 20px;
+ text-align: center;
+}
+
+
