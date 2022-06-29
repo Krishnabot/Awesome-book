@@ -11,6 +11,8 @@
 - When a user clicks the "Remove" button: The correct book is removed from the collection.
 - The correct book dissapears from the page.
 - The data is preserved in the browser's memory by using localStorage.
+- A Navigation bar is added with Three sections:Books list, Add book form and  Contact info.
+- When user  click on any of the links, the main area changes to display only one of the three content sections
 
 
 ## Built With
@@ -18,26 +20,10 @@
 - Html
 - Java script
 
-## Live Demo (if available)
+## Live Demo 
 
 [Live Demo Link](https://krishnabot.github.io/Awesome-book/)
 
-
-## Getting Started
-
-
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
 
 
 ## Author
