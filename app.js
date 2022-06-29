@@ -61,3 +61,27 @@ window.addEventListener('load', () => {
   }
   DynamicHtml.displayElements(booksCollection);
 });
+
+const navLinks = document.querySelectorAll('a');
+const listSection = document.getElementById('booksList');
+const newForm = document.getElementById('book-form');
+const contactInfo = document.getElementById('contact')
+function nav() {
+  if (this.id === 'listLink') {
+    listSection.className = '';
+    newForm.className = 'hide';
+    contactInfo.className = 'hide';
+  } else if (this.id === 'newLink') {
+    listSection.className = 'hide';
+    newForm.className = '';
+    contactInfo.className = 'hide';
+  } else {
+    listSection.className = 'hide';
+    newForm.className = 'hide';
+    contactInfo.className = '';
+  }
+}
+
+navLinks.forEach((link) => {
+  link.addEventListener('click',nav);
+})

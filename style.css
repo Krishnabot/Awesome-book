@@ -95,7 +95,9 @@ td {
 }
 
 #contact {
-  margin: auto ;
+  /* margin: auto ; */
+  margin-top: 0;
+  border-top: 1px solid red;
 }
 
 #contact > ul > li {
@@ -107,4 +109,11 @@ footer > p {
  text-align: center;
 }
 
+.hide {
+  display: none;
+  visibility: hidden;
+}
 
+h2 {
+  text-align: center;
+}

@@ -16,12 +16,12 @@
     <nav class="navBar">
         <div class="navBarTitle">Awesome Books</div>
         <ul class="navItems">
-            <li class="navItem"><a>List</a></li>
-            <li class="navItem"><a>New</a></li>
-            <li class="navItem"><a>Contact</a>Contact</li>
+            <a id="listLink"><li class="navItem">List</li></a>
+            <li class="navItem"><a id="newLink">Add New</a></li>
+            <li class="navItem"><a id="contactLink">Contact</a></li>
         </ul>
     </nav>
-    <section id="booksList">
+    <section  id="booksList">
         <h2>All Awesome Books</h2>
         <table>
             <tbody id="book-list">
@@ -29,7 +29,7 @@
             </tbody>
         </table>
     </section>
-    <form id="book-form">
+    <form class="hide" id="book-form">
         <h2>Add a New Book </h2>
         <input type="text" placeholder="Title" required id="title">
         <input type="text" placeholder="Author" required id="author">
@@ -37,7 +37,7 @@
         <button class="removeBtn" style="display:none"></button>
 
     </form>
-    <section id="contact">
+    <section class="hide" id="contact">
         <h2>Contact Information</h2>
         <p>Do you have any question or want to say hello, you can reach us on the below contact information</p>
         <ul>
