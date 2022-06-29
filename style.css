@@ -6,9 +6,26 @@
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: space-between;
+  border-top: 1px solid red;
+  width: 70%;
 }
 
+#date {
+  margin-left: auto;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 100%;
+  border : 1px solid green;
+}
+
+.navItems {
+  list-style: none;
+  display: flex;
+}
 table {
   border: 2px solid black;
 }
@@ -20,6 +37,7 @@ tbody :nth-child(even) {
 tr {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .removeBtn {
@@ -36,14 +54,29 @@ td {
   line-height: 1;
 }
 
-form {
+#book-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: center;
   margin: 2rem;
+  flex: 1 1 70%;
+  border: 1px solid blue;
+}
+
+#title,
+#author {
+  flex: 1 1 100%;
+  width: 70%;
+  align-self: center;
+}
+
+#book-form h2 {
+  flex: 0 0 100%;
+  align-self: center;
 }
 
 #add-book {
   margin-left: auto;
 }
+
+h2 
