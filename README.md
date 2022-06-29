@@ -20,26 +20,10 @@
 - Html
 - Java script
 
-## Live Demo (if available)
+## Live Demo 
 
 [Live Demo Link](https://krishnabot.github.io/Awesome-book/)
 
-
-## Getting Started
-
-
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
 
 
 ## Author
