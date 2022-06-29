@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Awesome Book App</title>
 </head>
 <body>
@@ -15,13 +16,12 @@
     </table>
 
     <form id ="book-form">
+        <h3>Add a New Book </h3>
         <div>
-            <label for="title">Title</label>
-            <input type="text" required id="title">
+            <input type="text" placeholder="Title" required id="title">
         </div>
         <div>
-            <label for="author">Author</label>
-            <input type="text" required id="author">
+            <input type="text" placeholder="Author" required id="author">
         </div>
         <input type="submit" value="Submit" id="add-book">
         <button class="removeBtn" style="display:none"></button>

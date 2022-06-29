@@ -7,6 +7,12 @@ class AwesomeBook {
   }
 }
 
+class BooksClass {
+  constructor() {
+    return [];
+  }
+}
+
 class DynamicHtml {
   static displayElements(booksCollection) {
     booksCollection.forEach((book, index) => DynamicHtml.addBookToTable(book, index));
@@ -14,34 +20,31 @@ class DynamicHtml {
 
   static addBookToTable(book, id) {
     const bookList = document.querySelector('#book-list');
-    const bookRecord = document.createElement('tbody');
-
-    const titleCell = document.createElement('tr');
-    const authCell = document.createElement('tr');
-    const horline = document.createElement('hr');
-    horline.setAttribute('width', '100vw');
-    titleCell.textContent = book.title;
-    authCell.textContent = book.author;
+    const bookRecord = document.createElement('tr');
+    const titleCell = document.createElement('td');
+    titleCell.textContent = `"${book.title}" by ${book.author}`;
     const removeBtn = document.createElement('button');
     removeBtn.id = id;
     removeBtn.className = 'removeBtn';
     removeBtn.textContent = 'Remove';
-    removeBtn.onclick = removeBook;
-    bookRecord.append(titleCell, authCell, removeBtn, horline);
+    removeBtn.onclick = this.removeBook;
+    bookRecord.append(titleCell, removeBtn);
     bookList.appendChild(bookRecord);
+  }
+
+  static removeBook(e) {
+    const id = parseInt(this.id, 10);
+    booksCollection.splice(id, 1);
+    e.target.parentNode.remove();
+    localStorage.setItem('booksCollection', JSON.stringify(booksCollection));
   }
 }
 
-function removeBook(event) {
-  const id = parseInt(event.target.id, 10);
-  booksCollection.splice(id,1);
-  localStorage.setItem('booksCollection', JSON.stringify(booksCollection));
-  event.target.parentNode.remove();
-}
-
 const addBtn = document.getElementById('book-form');
-let booksCollection = [];
-if (localStorage.getItem('booksCollection')) booksCollection = JSON.parse(localStorage.getItem('booksCollection'));
+let booksCollection = new BooksClass();
+if (localStorage.getItem('booksCollection')) {
+  booksCollection = JSON.parse(localStorage.getItem('booksCollection'));
+}
 addBtn.addEventListener('submit', () => {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
@@ -53,6 +56,8 @@ addBtn.addEventListener('submit', () => {
 });
 
 window.addEventListener('load', () => {
-  if (localStorage.getItem('booksCollection')) booksCollection = JSON.parse(localStorage.getItem('booksCollection'));
+  if (localStorage.getItem('booksCollection')) {
+    booksCollection = JSON.parse(localStorage.getItem('booksCollection'));
+  }
   DynamicHtml.displayElements(booksCollection);
 });
