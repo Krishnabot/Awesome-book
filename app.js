@@ -65,7 +65,7 @@ window.addEventListener('load', () => {
 const navLinks = document.querySelectorAll('a');
 const listSection = document.getElementById('booksList');
 const newForm = document.getElementById('book-form');
-const contactInfo = document.getElementById("contact");
+const contactInfo = document.getElementById('contact');
 function nav() {
   if (this.id === 'listLink') {
     listSection.className = '';
@@ -83,5 +83,5 @@ function nav() {
 }
 
 navLinks.forEach((link) => {
-  link.addEventListener("click", nav);
+  link.addEventListener('click', nav);
 });
