@@ -3,7 +3,8 @@
   padding: 0;
 }
 
-body {
+body,
+#booksList {
   display: flex;
   flex-direction: column;
   align-items: space-between;
@@ -30,9 +31,21 @@ body {
   cursor: pointer;
 }
 
+.navBarTitle {
+  font-size: 32px;
+}
+
+.navItem {
+  font-size: 32px;
+}
+
 .navItems > li:nth-child(-n+2) {
   border-right: 2px solid black;
   padding-right: 20px;
+}
+
+.active {
+  color: blue;
 }
 
 a:active {
@@ -41,6 +54,7 @@ a:active {
 
 h2 {
   text-align: center;
+  font-size: 32px;
 }
 
 #booksList {
@@ -113,18 +127,23 @@ td {
 }
 
 #contact {
-  /* margin: auto ; */
   margin: 5rem auto 5rem auto;
   padding: 1rem;
+  font-size: 32px;
 }
 
 #contact > ul > li {
   margin-left: 5rem;
 }
 
+footer {
+  border: 2px solid gray;
+}
+
 footer > p {
   margin-top: 20px;
   text-align: center;
+ 
 }
 
 .hide {
